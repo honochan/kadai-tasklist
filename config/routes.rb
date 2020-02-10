@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   get 'user', to: 'users#index'
+  post "/tasks/:id/destroy" => "tasks#destroy"
+  delete 'destroy', to: 'tasks#destroy'
   resources :users, only: [:index, :new, :create]
   resources :tasks
 end

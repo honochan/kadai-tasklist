@@ -1,6 +1,9 @@
-<%#= @user.name %>
-<%#= gravatar_url(@user, { size: 500 }) %>
 <h1>id: <%= @task.id %>のタスク詳細ページ</h1>
 
 <p>ステータス:<%= @task.status %></p>
 <p>タスク:<%= @task.content %></p>
+
+<%= link_to 'このタスクを編集する', edit_task_path(@task), class: 'btn btn-light' %>
+
+<%= link_to("このタスクを削除する", "/tasks/#{@task.id}/destroy", {method: "post"}) %>
+<%= link_to("一覧に戻る", root_path, class: 'btn btn-light') %>
